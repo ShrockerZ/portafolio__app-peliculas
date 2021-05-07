@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Source+Code+Pro:wght@400;600;900&display=swap');
+@import './base/variables';
+@import './base/utilities';
+@import './mixin/mixin';
+// global styles
+@import './base/config';
+// components
+@import './components/shared/shared';
+@import './components/common/common';
+@import './components/lists/lists';
+@import './components/detail/detail';
+@import './components/loader/loader';
+// pages + layouts
+@import './pages/detail';
+@import './pages/home';
+@import './pages/favorite';
+
+

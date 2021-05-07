@@ -1,0 +1,27 @@
+a{
+    text-decoration: none;
+}
+ul{
+    margin-left: 0px;
+    padding-left: 0px;
+    list-style: none;
+}
+button{
+    border: none;
+}
+input,select,textarea{
+    display: block;
+    border: none;
+}
+input{
+    text-align: center;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $background;
+    font-family: $text-font;
+    color: $white;
+    font-size: $normal-size;
+}
+

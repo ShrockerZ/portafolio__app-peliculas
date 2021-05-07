@@ -1,0 +1,12 @@
+.button-icon{
+    position: absolute;
+    background-color: transparent;
+    color: $primary;
+    font-size: 2rem;
+    z-index:11;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.button-icon:hover{
+    transform: scale(0.80);
+}

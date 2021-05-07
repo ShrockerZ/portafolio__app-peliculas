@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router,Switch,Route  } from "react-router-dom";
+import Header from './components/shared/header';
+import Footer from './components/shared/footer';
+import Home from './pages/home';
+import Favorite from './pages/favorite';
+import Detail from './pages/detail';
+import { Provider } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import store from './store';
+
+import 'react-toastify/dist/ReactToastify.css';
+import './styles/app.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Header />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/favorites" component={Favorite} />
+            <Route exact path="/detail/:id" component={Detail} />
+            <Route exact path="*" component={Home} />
+          </Switch>
+          <ToastContainer 
+              position="top-left"
+              autoClose={1500}
+              hideProgressBar
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss={false}
+              draggable={false}
+              pauseOnHover/>
+        <Footer />
+      </Router>
+    </Provider>
   );
 }
 

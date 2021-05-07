@@ -1,0 +1,32 @@
+@mixin h-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@mixin v-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@mixin grid-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin grid-item($columns,$column-gap,$row-gap) {
+    display: grid;
+    grid-template-columns: repeat($columns,1fr);
+    column-gap: $column-gap;
+    row-gap: $row-gap;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}

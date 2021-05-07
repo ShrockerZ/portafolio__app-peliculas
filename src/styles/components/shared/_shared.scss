@@ -1,0 +1,20 @@
+// header
+.navigation{
+font-family: $title-font; 
+@include h-flex;
+    li{
+        padding: 1rem;
+        &:first-child{
+            font-size:$title-size;
+            width: 800px;  
+        }
+        &:not(:first-child){
+            &:hover{
+                border: 1px solid $white;
+                }
+            }
+        }
+}
+
+
+

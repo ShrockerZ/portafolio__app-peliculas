@@ -1,0 +1,20 @@
+.search-bar{
+    height: 15rem;
+    width: 100%;
+    font-family:$text-font;
+    background-image: url('../../assets/background.jpg');
+    background-position: center center;
+    position: relative;
+    form{
+        position: absolute;
+        top: 5rem;
+        width: 100%;
+        z-index: 11;
+        input{
+            width: 400px;
+            height: 30px;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+    }
+}

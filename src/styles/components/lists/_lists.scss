@@ -1,0 +1,45 @@
+// movie-list
+.favorite-list{
+    @include grid-list;
+}
+.item{
+    @include grid-item(2,0.5rem,0rem);
+    position: relative;
+    .item-img{
+        width: 200px;
+        height: 250px;
+        cursor:pointer;
+    }
+}
+// movie-items
+.movie-list{
+    @include grid-item(4,1rem,0.5rem);
+    margin: $space;
+    .item{
+        height: 250px;
+        background-color: $white;
+        position: relative;
+        h1{
+            font-size: 1em;
+        }
+        img{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+        .item-vote{
+            z-index: 111;
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            background-color: $primary;
+            color: $white;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+    }
+}

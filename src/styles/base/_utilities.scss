@@ -1,0 +1,36 @@
+.text-white{
+    color: $white;
+}
+.text-center{
+    text-align: center;
+}
+.w-full{
+    width: 100%;
+}
+.text-primary{
+    color: $primary;
+}
+.text-secondary{
+    color: $secondary;
+}
+.text-tertiary{
+    color: $tertiary;
+}
+.text-danger{
+    color: $danger;
+}
+.text-light{
+    color: $white;
+}
+
+.bg-primary{
+    background-color: $primary;
+}
+.top{
+    top: 0px;
+    right: 0px;
+}
+.bottom{
+    bottom:0px;
+    left:0px;
+}
