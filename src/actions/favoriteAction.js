@@ -1,7 +1,8 @@
 import { toast } from 'react-toastify'
 import {ADD_FAVORITE,
         DELETE_FAVORITE,
-        VIEW_FAVORITE} from '../types'
+        VIEW_FAVORITE,
+        RECOVERY_FAVORITE} from '../types'
 
 
 export const addFavorite=item=>{
@@ -14,6 +15,7 @@ export const addFavorite=item=>{
     }
 }
 export const deleteFavorite=id=>{
+    console.log(id);
     return(dispatch)=>{
         dispatch({
             type:DELETE_FAVORITE,
@@ -28,6 +30,14 @@ export const viewFavorite=id=>{
         dispatch({
             type:VIEW_FAVORITE,
             payload:id
+        })
+    }
+}
+export const recoveryFavorite=favorites=>{
+    return (dispatch)=>{
+        dispatch({
+            type:RECOVERY_FAVORITE,
+            payload:favorites
         })
     }
 }

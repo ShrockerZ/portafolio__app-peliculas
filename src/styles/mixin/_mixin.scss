@@ -15,7 +15,7 @@
 @mixin grid-list {
     display: grid;
     grid-template-columns: 1fr;
-    column-gap: 0.5rem;
+    column-gap: 0rem;
     justify-content: center;
     align-items: center;
 }

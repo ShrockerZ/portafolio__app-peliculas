@@ -1,4 +1,6 @@
+
 .info{
+    display: none;
     position: sticky;
     top: 0px;
     align-self: flex-start;
@@ -18,5 +20,10 @@
         padding: 1rem 0rem; 
         margin-bottom:0px;
         bottom: 0px;
+    }
+}
+@media screen and (min-width:768px) {
+    .info{
+        display: block;
     }
 }

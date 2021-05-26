@@ -1,45 +1,91 @@
-// movie-list
+// favorite-list
 .favorite-list{
     @include grid-list;
-}
-.item{
-    @include grid-item(2,0.5rem,0rem);
-    position: relative;
-    .item-img{
-        width: 200px;
-        height: 250px;
-        cursor:pointer;
-    }
-}
-// movie-items
-.movie-list{
-    @include grid-item(4,1rem,0.5rem);
-    margin: $space;
-    .item{
-        height: 250px;
-        background-color: $white;
+    margin: 0 auto;
+    .buttons{
         position: relative;
-        h1{
-            font-size: 1em;
+        display: flex;
+        height: 50px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        & button{
+            left: 0;
+            right: 0;
+            margin-right: 20px;
+            position: relative;
         }
-        img{
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center center;
+    }
+    .item{
+        @include grid-item(1,0.5rem,0.5rem);
+        position: relative;
+        .item-img{
+            width: 250px;
+            height: 250px;
+            cursor:pointer;
         }
-        .item-vote{
-            z-index: 111;
-            position: absolute;
-            bottom: 0px;
-            right: 0px;
-            background-color: $primary;
-            color: $white;
-            padding: 0.5rem;
-            font-size: 1rem;
+        .item-content{
+            position: relative;
         }
     }
 }
+
+@media screen and (min-width:768px) {
+    .favorite-list{
+        @include grid-list;
+        .buttons{
+            position: absolute;
+            display: flex;
+            top: 0;
+            height: 50px;
+            width: 100%;
+            margin-right: none    
+        }
+    }
+    .item{
+        @include grid-item(2,0.5rem,0rem);
+    }
+}
+
+// movie-list
+
+.movie-list{
+    @include grid-item(1,0.5rem,0.5rem);
+        .item{
+            height: 250px;
+            background-color: $white;
+            position: relative;
+            h1{
+                font-size: 1em;
+            }
+
+            img{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center center;
+            }
+            .item-vote{
+                z-index: 111;
+                position: absolute;
+                bottom: 0px;
+                right: 0px;
+                background-color: $primary;
+                color: $white;
+                padding: 0.5rem;
+                font-size: 1rem;
+            }
+        }
+}
+
+@media screen and (min-width:768px) {
+    .movie-list{
+        @include grid-item(4,0.5rem,0.5rem);
+        margin: $space/2;
+    }
+    
+}
+

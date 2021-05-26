@@ -8,7 +8,7 @@ import {    addFavorite as addFavorite_Action,
 const FavoriteButton = ({item}) => {
     const {isInFavoriteList}=UseFavorite();
     const dispatch = useDispatch()
-    const addFavorite=item=> dispatch(addFavorite_Action(item));
+    const addFavorite=item=>dispatch(addFavorite_Action(item)) 
     const deleteFavorite=id=> dispatch(deleteFavorite_Action(id));
 
     return ( 

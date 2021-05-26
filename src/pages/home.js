@@ -15,6 +15,8 @@ const Home = () => {
         getAllMovies();
         // eslint-disable-next-line
     }, [])
+
+
     const onSubmitForm= e=>{
         e.preventDefault();
         searchMovies(search)
@@ -25,7 +27,7 @@ const Home = () => {
                 <form onSubmit={e=>{onSubmitForm(e)}}>
                     <input  
                         type="text"
-                        placeholder="busca tus series y peliculas favoritas"
+                        placeholder="busca tus peliculas favoritas "
                         name="search"
                         value={search}
                         onChange={e=>{setSearch(e.target.value)}}/> 

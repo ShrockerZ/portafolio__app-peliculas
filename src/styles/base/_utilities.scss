@@ -34,3 +34,12 @@
     bottom:0px;
     left:0px;
 }
+.d-none{
+    display: block;
+}
+
+@media screen and (min-width:768px) {
+    .d-none{
+        display: none;
+    }
+}

@@ -21,6 +21,7 @@ const Detail = () => {
         if(!selected){
             viewMovie(id);
         } 
+    // eslint-disable-next-line 
     }, [id])
     const loadingImage= selected=>{
         let url;
@@ -38,7 +39,7 @@ const Detail = () => {
                 <div className="detail">
                     <img
                         alt="" 
-                        src={`${process.env.REACT_APP_IMG_URL}${loadingImage(selected)}` }
+                        src={`${process.env.REACT_APP_ORIGINAL_URL}${loadingImage(selected)}` }
                         className="detail-background"></img>
                     <FavoriteButton item={selected}/>
                     <h1>{selected.title}</h1>

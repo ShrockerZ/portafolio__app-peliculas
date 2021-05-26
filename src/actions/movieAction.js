@@ -55,9 +55,8 @@ export const searchMovies=query=>{
                 type:LOAD_MOVIE
             });
             query= query.toLowerCase().replace(' ','%20');
-            console.log(query)
-            const result=await axios.get(`${    process.env.REACT_APP_BASE_URL}/search/movie?api_key=${process.env.REACT_APP_API_TOKEN}&language=en-US&query=${query}&page=1&include_adult=false`);
-            console.log(result.data);
+            const result=await axios.get(`${process.env.REACT_APP_BASE_URL}/search/movie?api_key=${process.env.REACT_APP_API_TOKEN}&language=en-US&query=${query}&page=1&include_adult=false`);
+
             dispatch({
                 type: SEARCH_MOVIES,
                 payload:result.data.results

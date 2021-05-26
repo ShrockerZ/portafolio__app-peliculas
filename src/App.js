@@ -5,6 +5,7 @@ import Footer from './components/shared/footer';
 import Home from './pages/home';
 import Favorite from './pages/favorite';
 import Detail from './pages/detail';
+import {LocalStorage} from './context/LocalStorageContext'
 import { Provider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import store from './store';
@@ -16,24 +17,26 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Header />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/favorites" component={Favorite} />
-            <Route exact path="/detail/:id" component={Detail} />
-            <Route exact path="*" component={Home} />
-          </Switch>
-          <ToastContainer 
-              position="top-left"
-              autoClose={1500}
-              hideProgressBar
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss={false}
-              draggable={false}
-              pauseOnHover/>
-        <Footer />
+        <LocalStorage>
+          <Header />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/favorites" component={Favorite} />
+              <Route exact path="/detail/:id" component={Detail} />
+              <Route exact path="*" component={Home} />
+            </Switch>
+            <ToastContainer 
+                position="top-left"
+                autoClose={1500}
+                hideProgressBar
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss={false}
+                draggable={false}
+                pauseOnHover/>
+          <Footer />
+        </LocalStorage>
       </Router>
     </Provider>
   );

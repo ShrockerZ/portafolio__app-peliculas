@@ -1,20 +1,38 @@
 // header
 .navigation{
-font-family: $title-font; 
-@include h-flex;
+    font-family: $title-font; 
+    @include v-flex;
     li{
-        padding: 1rem;
-        &:first-child{
-            font-size:$title-size;
-            width: 800px;  
-        }
+        padding:1rem;
+        width: 100%;
+        text-align: center;
         &:not(:first-child){
-            &:hover{
-                border: 1px solid $white;
-                }
-            }
+            border: 0.5px solid white;
         }
+    }
 }
+@media screen and (min-width:768px){
+    .navigation{
+        position: relative;
+        @include h-flex;
+            li{
+                padding: 1rem;
+                width: 300px;
+                &:first-child{
+                    font-size:$title-size;
+                    width: 800px;  
+                }
+                &:not(:first-child){
+                    border: none;
+                    &:hover{
+                        border: 1px solid $white;
+                        }
+                    }
+                }
+        }        
+}
+
+
 
 
 
