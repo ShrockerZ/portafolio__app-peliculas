@@ -7,7 +7,7 @@ export const LocalStorage = (props) => {
     const favorites = useSelector(state => state.favorites.favorites);
     const dispatch = useDispatch();
     const recoveryFavorite= favorites=>dispatch(recoveryFavorite_action(favorites));
-    // recuperar
+    // localstorage recovery
     useEffect(()=>{
         if(favorites.length===0){
             if(!localStorage.getItem('favorites')){

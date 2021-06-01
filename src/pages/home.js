@@ -5,18 +5,18 @@ import {    getAllMovies as getAllMovies_Action,
 import MovieList from '../components/lists/movieList';
 
 const Home = () => {
-    // effect
+    // state + dispatch 
     const [search, setSearch] = useState("")
     const dispatch = useDispatch();
     const getAllMovies=()=>{dispatch(getAllMovies_Action())};   
     const searchMovies=query=>{dispatch(searchMovies_Action(query))};   
-
+    // effect
     useEffect(() => {
         getAllMovies();
         // eslint-disable-next-line
     }, [])
 
-
+    // local function
     const onSubmitForm= e=>{
         e.preventDefault();
         searchMovies(search)

@@ -8,14 +8,12 @@ import Spinner from '../components/loader/spinner';
 
 
 const Detail = () => {
-    // parametros
+    // state + dispatch
     let {id}= useParams();
-    // recuperar datos
-    // dispatch de funciones
     const dispatch = useDispatch();
     const viewMovie=id=>dispatch(viewMovie_Action(id)); 
     const {selected,loading}=  useSelector(state=>state.movies);
-    
+    // effect
     useEffect(() => {
         window.scrollTo(0,0);
         if(!selected){
@@ -23,6 +21,7 @@ const Detail = () => {
         } 
     // eslint-disable-next-line 
     }, [id])
+    // local functions
     const loadingImage= selected=>{
         let url;
         selected.backdrop_path!==undefined
