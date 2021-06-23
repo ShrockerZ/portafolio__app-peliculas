@@ -16,7 +16,7 @@ const favoriteReducer=(state=initialState,action)=>{
         case ADD_FAVORITE:      return {...state,
                                 favorites:[...state.favorites,action.payload]}
         case DELETE_FAVORITE:   
-                                console.log(action.payload,state.selected)
+                                console.log(action.payload,state.favorites);
                                 return {...state,
                                 favorites:state.favorites.filter(item=>item.id!==action.payload),
                                 selected:state.selected && state.selected.id===action.payload?null:state.selected}

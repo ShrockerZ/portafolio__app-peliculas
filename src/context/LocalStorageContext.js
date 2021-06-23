@@ -9,11 +9,10 @@ export const LocalStorage = (props) => {
     const recoveryFavorite= favorites=>dispatch(recoveryFavorite_action(favorites));
     // localstorage recovery
     useEffect(()=>{
-        if(favorites.length===0){
-            if(!localStorage.getItem('favorites')){
-                localStorage.setItem('favorites',JSON.stringify(favorites)); 
-            }else{
-                const items=JSON.parse(localStorage.getItem('favorites'));
+        if(!localStorage.getItem('favorites')){
+            if(favorites.length===0){
+                const items= localStorage.getItem('favorites') ?? [];
+                localStorage.setItem('favorites',JSON.stringify(items)); 
                 recoveryFavorite(items);
             }
         }
